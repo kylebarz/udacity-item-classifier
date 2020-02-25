@@ -20,12 +20,13 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 Data Training:
-Databricks with GPU for Fastest Performance
+Databricks Cluster with GPU for Fastest Performance
 Datalake for Storage of Raw Image Data
 Torch
 Flask
 Numpy
 
+For Web Front End:
 Python 3
 Flask
 Numpy
@@ -33,71 +34,41 @@ Torch
 TorchVision
 
 
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Files contained within the "build_model" will generate the CNN to be consumed in subsequent steps. 
 
-Say what the step will be
+*Step 1: "Data Access" will open a Tab-Seperated File from the Data Lake and copy it to local storage for performance reasons. 
+This TSV is formatted to contain the original image and all annotated data with relative coordinates. Running this notebook will
+extract the contents from each section of the image to it's own sequentially-numbered file inside of a directory corresponding to the tag. Finally, the data is compressed and copied to the Data Lake for storage.
 
-```
-Give the example
-```
+*Step 2: "Data Explore & Prep" shows the distribution of images by tag/product. I've decided to remove items with a substantially large
+number of photos or too few. In a later release, I would add image augmentation processed to try to equalize the dataset and reduce
+the images removed. Finally, this notebook will split the files into a TRAIN/VALID/TEST structure for use in PYTORCH.
 
-And repeat
+*Step 3: "Model Building" will build the model for use in the web app. This is designed to use a pre-trained model (ie. RESNET50),
+removes the last layer, and updates based upon the training day. I've designed this to save a checkpoint at the end of each epoch.
+The number of epochs is configurable. In a future relase, I would add testing of multiple models and have it automatically end when
+training is no longer improving. 
 
-```
-until finished
-```
+*Step 4: Copy the output model (saved to the datalake) into the "model/" folder for access.
 
-End with an example of getting some data out of the system or using it for a little demo
+*Step 5: Run "python app.py" to launch Flask. Access the model through the web browser.
 
-## Running the tests
+*Step 6: Submit Test Images to the front-end and watch the results!
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* Azure Data Lake
+* Azure Data Bricks
+* PyTorch
+* ResNet50
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* Kyle Barz
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -105,6 +76,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Udacity for some code and a LOT of instruction!
+* Other links embedded in the code where inspiration was used from others. 
+* Microsoft for assistance in tagging the data.
