@@ -14,6 +14,11 @@ environment I wanted to learn about.
 
 A demo of this code is available at: https://productid.azurewebsites.net/
 
+Download sample product images to test with from: https://productid.azurewebsites.net/static/model_download/TEST_IMAGES.ZIP
+
+Due to Github file size limitations, the trained model must be downloaded from: https://productid.azurewebsites.net/static/model_download/checkpoint-19.zip
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -52,7 +57,7 @@ removes the last layer, and updates based upon the training day. I've designed t
 The number of epochs is configurable. In a future relase, I would add testing of multiple models and have it automatically end when
 training is no longer improving. 
 
-*Step 4: Copy the output model (saved to the datalake) into the "model/" folder for access.
+*Step 4: Copy the output model (saved to the datalake) into the "model/" folder for access. Alternatively, you can download the pre-trained model from the link above, unzip, and place it in the "model/" folder. 
 
 *Step 5: Run "python app.py" to launch Flask. Access the model through the web browser.
 
