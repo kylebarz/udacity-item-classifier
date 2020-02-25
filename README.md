@@ -19,19 +19,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Data Training:
-*Databricks Cluster with GPU for Fastest Performance
-*Datalake for Storage of Raw Image Data
-*Torch
-*Flask
-*Numpy
+*Data Training:
+**Databricks Cluster with GPU for Fastest Performance
+**Datalake for Storage of Raw Image Data
+**Torch
+**Flask
+**Numpy
 
-For Web Front End:
-*Python 3
-*Flask
-*Numpy
-*Torch
-*TorchVision
+*For Web Front End:
+**Python 3
+**Flask
+**Numpy
+**Torch
 
 
 ### Installing
