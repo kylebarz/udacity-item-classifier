@@ -9,8 +9,10 @@ algorithm to determine which specific item is visible.
 I set out to test my ability on building a computer vision algorithm based upon a pre-trained model. There are two components
 to this code:
 * Vision Algorithm Training - This was conducted using a DataBricks GPU cluster from an Azure Data Lake. 
-* Flask Web App Deployed to Azure App Services. This is different than what was included in the UDacity course, but was the environment I wanted
-to learn about. 
+* Flask Web App Deployed to Azure App Services. This is different than what was included in the UDacity course, but was the 
+environment I wanted to learn about. 
+
+A demo of this code is available at: https://productid.azurewebsites.net/
 
 ## Getting Started
 
