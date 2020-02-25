@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>About</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+
+        <script src="{{ url_for('static', filename='jquery_functions.js') }}"></script>
+    </head>
+    <body>
+        <nav class="nav-site">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/model">Model</a>
+			<a href="https://github.com/kylebarz/udacity-item-classifier">GitHub Repository</a>
+        </nav>
+        <h1>About</h1>
+        <p></p>
+
+        <div class="container">
+            <div id="overview">
+                <h3>Project Inspiration</h3>
+                <p>
+                    Each day, many people from sales organizations go into retail stores and audit what products are available on the shelf.
+					They generally do that by performing a manual assessment of store shelves and answering a series of survey questions.
+					We asked ourselves if it would be possible to do this using computer vision. The ideal computer vision model would
+					assess the photo to measure both what products are available as well as the quality of the display. In this example.
+					we have proved that it would be possible to use an Object Detection algorithm to detect items on a shelf, followed by 
+					an Image Classifier algorithm to determine which specific item is visible. 
+					<h3>To-Do List</h3>
+					<ol>
+						<li>Clean-Up User Interface</li>
+						<li>Test Model with Hundreds of SKUs</li>
+						<li>Create an API for the Product Classifier</li>
+					</ol>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

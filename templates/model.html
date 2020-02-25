@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Model Overview</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+
+        <script src="{{ url_for('static', filename='jquery_functions.js') }}"></script>
+    </head>
+    <body>
+        <nav class="nav-site">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/model">Model</a>
+			<a href="https://github.com/kylebarz/udacity-item-classifier">GitHub Repository</a>
+        </nav>
+        <h1>Model Overview</h1>
+        <p></p>
+
+        <div class="container">
+            <div id="overview">
+                <h3>Accuracy Curve</h3>
+                <p>
+                    <img src="{{ url_for('static', filename='accuracy_curve.png') }}" />
+                </p>
+                <h3>Model Loss</h3>
+                <p>
+                    <img src="{{ url_for('static', filename='model_loss_curve.png') }}" />
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
