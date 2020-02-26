@@ -1,4 +1,7 @@
 # UDacity Capstone: Item on Shelf Image Classifier
+
+Blog post containing more background: https://medium.com/@kyle.barz/udacity-computer-vision-with-product-recognition-ed047f9bb6f
+
 Each day, many people from sales organizations go into retail stores and audit what products are available on the shelf.
 They generally do that by performing a manual assessment of store shelves and answering a series of survey questions.
 We asked ourselves if it would be possible to do this using computer vision. The ideal computer vision model would assess
